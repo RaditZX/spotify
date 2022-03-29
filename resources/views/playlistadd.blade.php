@@ -62,28 +62,23 @@ input[type="file"] {
 </style>
 @foreach($musics as $music)@endforeach
 <div class="container">
-  <form action="{{ url('music') }}" method="post" enctype="multipart/form-data">
+  <form action="{{ url('playlists') }}" method="post" enctype="multipart/form-data">
       @csrf
   
      <h1> Music</h1>
 
-        <input type="text" placeholder="Music Name" name="name"/>
+        <input type="text" placeholder="Music Name" name="playlistname"/>
+        <input type="text" placeholder="Music Name" name="music_id"/>
     
         <h4>Music</h4>
-      <label class="custom-file-upload">Choose FIle
-      <input class="form-control" type="file" id="music" name="music"  " >
-</label>
+
 <h4>Cover</h4>
 <label class="custom-file-upload">Choose FIle
-      <input class="form-control" type="file" id="image" name="image"  " >
+      <input class="form-control" type="file" id="image" name="imageplaylist"  " >
 </label><br><br>
   
 
-        <input type="text" placeholder="Author" name="composer"/>
-   
-
-        <input type="text" placeholder="Lyric" name="lyric"/>
-    
+        
      
   
     <input type="submit" >

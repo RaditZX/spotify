@@ -55,7 +55,7 @@ input[type="file"] {
 </style>
 
 <div class="container">
-    @foreach ($musics as $music)    @endforeach
+    @foreach ($musics as $music)@endforeach
   <form action="{{ url('music',$music->id) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method ("PUT")

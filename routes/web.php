@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,8 @@ Route::get('/detail/{id}',[MusicController::class,'show']);
 Route::resource('music',MusicController::class);
 
 
+Route::get('/playlist',[PlaylistController::class,'index']);
+Route::get('/playlistadd',[PlaylistController::class,'create']);
+Route::get('/playlistdetail/{id}',[PlaylistController::class,'show']);
+Route::resource('playlists',PlaylistController::class);
 require __DIR__.'/auth.php';

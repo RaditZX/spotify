@@ -11,6 +11,7 @@
     body {
     background-color:  #000000;
     font-family:sans-serif;
+    color: white;
     }
     .main-nav {
   grid-area: mn;
@@ -115,13 +116,19 @@ input{
        
       
 @if ($music->user_id!= auth()->id())
-                 <a href="/list">Home</a>
+<a href="/list">Home</a>
+<a href="/playlist">Playlist</a>
+
+<a href="/playlistadd">PlaylistAdd</a>
                  
 @else
 
 <a href="/list">Home</a>
 
 <a href="/add">Add</a>
+<a href="/playlist">Playlist</a>
+
+<a href="/playlistadd">PlaylistAdd</a>
                 
 </nav>
 @endif

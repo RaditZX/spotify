@@ -13,22 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('music', function (Blueprint $table) {
+        Schema::create('playlist', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('music');
-            $table->string('image');
-            $table->string('composer');
-            $table->string('lyric',5000);
-
+            $table->string('playlistname');
+            $table->string('imageplaylist');
             $table->timestamps();
         });
-        Schema::table('music', function (Blueprint $table) {
+        Schema::table('playlist', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
          
             $table->foreign('user_id')->references('id')->on('users');
         });
-        
+        Schema::table('playlist', function (Blueprint $table) {
+            $table->unsignedBigInteger('music_id');
+         
+            $table->foreign('music_id')->references('id')->on('music');
+        });
     }
 
     /**
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('music');
+        Schema::dropIfExists('playlist');
     }
 };

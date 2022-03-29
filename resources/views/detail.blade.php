@@ -5,6 +5,8 @@
     body{
         font-family:sans-serif;
         color:white;
+ 
+   
     }
     .main{
         width: 80em;
@@ -17,7 +19,7 @@
         display: flex;
 
       margin-top: 10em;
-      margin-left: 25em;
+      margin-left: 40rem;
       
     }
     .container1{
@@ -92,8 +94,8 @@
 
 
     </div>
-    <p style="margin-left:25em;">{{ $music->lyric }}</p>
-    <a href="/edit/{{ ($music->id) }}"><button style="margin-left:25em;" class="button button1">Edit</button></a>
+    <p style="margin-left:40em;">{{ $music->lyric }}</p>
+    <a href="/edit/{{ ($music->id) }}"><button style="margin-left:40em;" class="button button1">Edit</button></a>
 <a href="/delete/{{ ($music->id) }}"><button class="button button2">Delete</button></a>
 @endif
 </div>

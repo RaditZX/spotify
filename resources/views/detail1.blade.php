@@ -40,14 +40,17 @@
 
  
   <div class="main">
-  <H1 style="margin-left:2rem" >Music</H1>
+  @foreach ($musics as $music)
+  <H1 style="margin-left:2rem" >Playlist {{ $music->playlistname}}</H1>
+  @endforeach
     <div class="cards">
-    @foreach ($Musics as $music)
+    
+    @foreach ($playlists as $playlist)
     <div class="card ">
     
-      <a href="/detail/{{ ($music->id) }}"><img width="200em" src="{{asset('storage/'.$music->image)}}" alt=""></a><br>
-      <h3>{{ $music->name }}</h3>
-      <a  href="/detail/{{ $music->id }}" style="text-decoration:none; color:white;">Listen Now! </a>
+      <a href="/detail/{{ ($playlist->id) }}"><img width="200em" src="{{asset('storage/'.$playlist->image)}}" alt=""></a><br>
+      <h3>{{ $playlist->name }}</h3>
+      <a  href="/detail/{{ $playlist->id }}" style="text-decoration:none; color:white;">Listen Now! </a>
     
   
     </div>
